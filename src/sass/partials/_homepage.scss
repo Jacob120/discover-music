@@ -1,0 +1,115 @@
+.home-body {
+  background: $color-dark;
+}
+
+.audio-players {
+  height: 100vh;
+  margin-top: $base-size * 5;
+}
+
+.subscribe-section {
+  background-image: url("../images/subscribe.jpg");
+  height: 100vh;
+  position: relative;  
+  background-size: contain;
+  background-position: center center;
+}
+
+
+.subscribe-title {
+  @extend .h2;  
+  margin-top: $base-size * -5;
+  font-weight: $font-semibold;
+  color: $color-white;
+  font-size: 100px;
+  position: absolute;
+  letter-spacing: $base-size;
+  left: 25%;
+
+
+  .bold {
+    font-weight: $font-black;
+    padding: $base-size * 3;
+  }
+} 
+
+.subscribe-body {
+  position: relative;
+  height: 50vh;
+  top: 15%;
+
+  padding-bottom: 100px;
+}
+
+.btn { 
+  font-family: $font-header;
+  font-size: 40px;
+  font-weight: $font-bold;
+  color: $color-white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: $color-main;
+  padding: 15px 30px;
+  border-radius: 10px;
+  letter-spacing: 8px;
+  position: absolute;
+  top: 80%;
+}
+
+.artist-body {
+  position: relative; 
+} 
+
+.artist {
+  color: $color-white;
+  font-family: $font-header;
+  font-weight: $font-black;
+  font-size: 100px;
+  position: absolute;
+  top: 70%;
+  left: 5%;
+  z-index: 3;
+  letter-spacing: $base-size;
+}
+
+.artist-last-name {
+  position: absolute;
+  left: 25%;
+}
+
+.son {
+  color: $color-main;
+}
+
+.artist-image {
+  position: absolute;
+  
+  z-index: 2;
+  height: 578px;
+  width: 465px;
+  left: 43%;  
+ top: -5%;
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-end;
+  position: absolute;
+  font-size: 40px;
+  top: 130%;
+  left: 10%;
+  letter-spacing: $base-size;
+  
+  
+  h2 {
+    font-weight: $font-bold;
+    color: $color-light;
+  }
+
+  p {
+    font-weight: $font-semibold;
+    color: $color-white;    
+  }
+}
