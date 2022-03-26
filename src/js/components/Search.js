@@ -13,7 +13,7 @@ class Search {
     const thisSearch = this;
 
     /* generate HTML based on template */
-    const generatedHTML = templates.homePage();
+    const generatedHTML = templates.searchPage();
     /* create element using utils.createElementFromHTML */
     thisSearch.element = utils.createDOMFromHTML(generatedHTML);
     console.log('search', thisSearch.element);
