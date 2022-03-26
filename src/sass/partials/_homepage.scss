@@ -1,17 +1,16 @@
-.home-body {
+#home-body {
   background: $color-dark;
 }
 
 .audio-players {
-  height: 100vh;
-  margin-top: $base-size * 5;
+  height: 80vh;
 }
 
 .subscribe-section {
   background-image: url("../images/subscribe.jpg");
   height: 100vh;
   position: relative;
-  background-size: contain;
+  background-size: cover;
   background-position: center center;
 }
 
