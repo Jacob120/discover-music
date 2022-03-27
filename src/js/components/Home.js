@@ -2,18 +2,22 @@ import {select, templates} from '../settings.js';
 import utils from '../utils.js';
 
 class Home {
-  constructor(element){
+  constructor(id, data){
     const thisHome = this;
 
-    thisHome.render(element);
+    thisHome.id = id;
+    thisHome.data = data;
+
+    thisHome.render();
+    thisHome.initWidgets();
 
   }
 
-  render(element){
+  render(){
     const thisHome = this;
 
     /* generate HTML based on template */
-    const generatedHTML = templates.homePage();
+    const generatedHTML = templates.homePage(thisHome.data);
     /* create element using utils.createElementFromHTML */
     thisHome.element = utils.createDOMFromHTML(generatedHTML);
     
@@ -24,9 +28,9 @@ class Home {
     homeContainer.appendChild(thisHome.element);
     
     
-    thisHome.dom = {
-      wrapper: element,
-    };
+    // thisHome.dom = {
+    //   wrapper: element,
+    // };
 
     // thisHome.pages = document.querySelector(select.containerOf.pages).children;
     // thisHome.navBar = document.querySelectorAll(select.nav.links);
@@ -63,6 +67,11 @@ class Home {
 
     //   });
     // }
+  }
+
+  /* eslint-disable */ 
+  initWidgets() {    
+    const gap = new GreenAudioPlayer('.gap-example');
   }
 
 }

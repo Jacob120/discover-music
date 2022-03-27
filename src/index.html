@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./vendor/green-audio-player.css">
+  <link rel="stylesheet" type="text/css" href="./vendor/green-audio-player.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
   <body>
@@ -41,21 +41,29 @@
     </section>
   </div>
 
-  <script id="template-home-page" type="text/x-handlebars-template">
+  
   <div id="home-body">
-   <div class="container players">     
-     <div class="audio-players">
-      <h2 style="color: white">TEST TEST TEST</h2>
-      <div class="gap-example">
-        <audio>
-          <!-- <source src="songs/At_The_Top_David_Renda.mp3" type="audio/mpeg"> -->
-        </audio>
-      </div>
+   <div class="container">
+    <script id="template-home-page" type="text/x-handlebars-template">     
+     <div class="players-wrapper">      
+        <div class="row author">
+          <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
+        </div>
+        <div class="gap-example row">
+          <audio class="col-md-12">
+            <source src="songs/At_The_Top_David_Renda.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="row align-items-center player-description">
+            <h4 class="col-md-6">Categories: test, test </h4>
+            <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
+        </div>      
     </div>
+  </script>
    </div>
    <div class="subscribe-section">
      <h2 class="subscribe-title">Subscribe<span class="bold">now</span></h2>
-     <div class="row container subscribe-body">
+     <div class="row container subscribe-container">
        <div class="col-md-4">
          <a href="#" class="btn btn-join">Join now</a>
        </div>
@@ -76,15 +84,14 @@
      </div>
    </div>
   </div>
-  </script>
+  
 
   <script id="template-search-page" type="text/x-handlebars-template">
-    <h3 style="color: white">test search</h3>
-  
+    <h1>test search</h1>  
   </script>
 
   <script id="template-discover-page" type="text/x-handlebars-template">
-    <h3 >test discover</h3>  
+    <h1>test discover</h1>  
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="./vendor/green-audio-player.js"></script>

@@ -1,10 +1,37 @@
-#home-body {
+#home-id {
   background: $color-dark;
+  padding-bottom: $base-size * 5;
 }
 
-.audio-players {
-  height: 80vh;
+/* Audio players section */
+
+.players-wrapper {
+  background: $color-dark;
+  display: flex;
+  flex-direction: column;
+  // height: 80vh;
+  max-width: 580px;
+  color: white;
+  margin: 0 auto;
+  padding-top: $base-size * 9;  
+  
 }
+
+.gap-example {
+  width: 580px;
+  margin: 60px auto;
+ 
+}
+
+.author {
+  text-align: center;
+}
+
+.ranking {
+  text-align: end;
+}
+
+/* Subscribe section */
 
 .subscribe-section {
   background-image: url("../images/subscribe.jpg");
@@ -32,7 +59,7 @@
   }
 } 
 
-.subscribe-body {
+.subscribe-container {
   position: relative;
   height: 50vh;
   top: 15%;

@@ -24,8 +24,15 @@ export const classNames = {
   }
 };
 
+export const settings = {
+  db: {
+    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131' : ''),
+    songs: 'songs',
+  },
+};
+
 export const templates = {
   homePage: Handlebars.compile(document.querySelector(select.templateOf.homePage).innerHTML),
   searchPage: Handlebars.compile(document.querySelector(select.templateOf.searchPage).innerHTML),
-
+  discoverPage: Handlebars.compile(document.querySelector(select.templateOf.discoverPage).innerHTML),
 };

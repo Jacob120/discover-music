@@ -1,6 +1,7 @@
-import {select, classNames} from './settings.js';
+import {select, classNames, settings} from './settings.js';
 import Home from './components/Home.js';
 import Search from './components/Search.js';
+import Discover from './components/Discover.js';
 
 const app = {
   initPages: function(){
@@ -54,6 +55,33 @@ const app = {
     }
   },
 
+  initPlayers: function(){
+    const thisApp = this;
+
+    for (let songData in thisApp.data.songs) {
+      new  Home(thisApp.data.songs[songData].id, thisApp.data.songs[songData]);
+    }    
+  },
+
+  initData: function(){
+    const thisApp = this;
+
+    thisApp.data = {};
+    const url = settings.db.url + '/' + settings.db.songs;
+    
+    fetch(url)
+      .then(function(rawResponse){
+        return rawResponse.json();
+      })
+      .then(function(parsedResponse){
+        thisApp.data.songs = parsedResponse;
+
+        thisApp.initPlayers();
+      });
+
+    
+  },
+
   initHome(){
     const thisApp = this;
 
@@ -70,12 +98,25 @@ const app = {
     thisApp.search = new Search(searchElement);
   },
 
+  initDiscover(){
+    const thisApp = this;
+
+    const discoverElement = document.querySelector(select.containerOf.discover);
+
+    thisApp.discover = new Discover(discoverElement);
+  },
+
   init: function () {
     const thisApp = this;
 
     thisApp.initPages();
-    thisApp.initHome();
+    thisApp.initData();
+    // thisApp.initHome();
     thisApp.initSearch();
+    thisApp.initDiscover();
+
+  
+
   }
 };
 

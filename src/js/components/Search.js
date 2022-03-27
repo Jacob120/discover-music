@@ -16,7 +16,7 @@ class Search {
     const generatedHTML = templates.searchPage();
     /* create element using utils.createElementFromHTML */
     thisSearch.element = utils.createDOMFromHTML(generatedHTML);
-    console.log('search', thisSearch.element);
+    
     /* find menu container */
     const searchContainer = document.querySelector(select.containerOf.search);
     /* add element to menu */
