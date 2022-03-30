@@ -43,22 +43,7 @@
 
   <div id="home-body">
    <div class="container">
-    <script id="template-home-page" type="text/x-handlebars-template">     
-     <div class="players-wrapper">      
-        <div class="row author">
-          <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
-        </div>
-        <div class="gap-example row">
-          <audio class="col-md-12">
-            <source src="songs/{{filename}}" type="audio/mpeg">
-          </audio>
-        </div>
-        <div class="row align-items-center player-description">
-            <h4 class="col-md-6">Categories: test, test </h4>
-            <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
-        </div>      
-    </div>
-  </script>
+
    </div>
    <div class="subscribe-section">
      <h2 class="subscribe-title">Subscribe<span class="bold">now</span></h2>
@@ -83,6 +68,23 @@
      </div>
    </div>
   </div>
+
+  <script id="template-home-page" type="text/x-handlebars-template">     
+    <div class="players-wrapper">      
+       <div class="row author">
+         <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
+       </div>
+       <div class="gap-example row player">
+         <audio class="col-md-12 ">
+           <source src="songs/{{filename}}" type="audio/mpeg">
+         </audio>
+       </div>
+       <div class="row align-items-center player-description">
+           <h4 class="col-md-6">Categories: test, test </h4>
+           <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
+       </div>      
+   </div>
+ </script>
 
   <script id="template-search-page" type="text/x-handlebars-template">
     <h1>test search</h1>  
