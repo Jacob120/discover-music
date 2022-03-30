@@ -60,6 +60,7 @@ const app = {
 
     for (let songData in thisApp.data.songs) {
       new  Home(thisApp.data.songs[songData].id, thisApp.data.songs[songData]);
+      new  Search(thisApp.data.songs[songData].id, thisApp.data.songs[songData]);
     }    
   },
 
@@ -77,18 +78,16 @@ const app = {
         thisApp.data.songs = parsedResponse;
 
         thisApp.initPlayers();
-      });
-
-    
+      });    
   },
 
-  initHome(){
-    const thisApp = this;
+  // initHome(){
+  //   const thisApp = this;
 
-    const homeElement = document.querySelector(select.containerOf.home);
+  //   const homeElement = document.querySelector(select.containerOf.home);
 
-    thisApp.home = new Home(homeElement);
-  },
+  //   thisApp.home = new Home(homeElement);
+  // },
 
   initSearch(){
     const thisApp = this;
@@ -96,6 +95,7 @@ const app = {
     const searchElement = document.querySelector(select.containerOf.search);
 
     thisApp.search = new Search(searchElement);
+   
   },
 
   initDiscover(){

@@ -32,70 +32,96 @@
   <div id="pages">
     <section id="home">
       <div id="home-id" class="home-wrapper"></div>
+      <div id="home-body">  
+        <div class="subscribe-section">
+          <h2 class="subscribe-title">Subscribe<span class="bold">now</span></h2>
+          <div class="row container subscribe-container">
+            <div class="col-md-4">
+              <a href="#" class="btn btn-join">Join now</a>
+            </div>
+            <div class="col-md-8 artist-body">
+             <div class="test">
+               <!-- <div class="col-md-6"> -->
+                <h2 class="artist"><span class ="artist-name">Dean</span><br><span class="artist-last-name">Hen<span class="son">son</span></span></h2>
+               <!-- </div> -->
+               <!-- <div class="col-md-6"> -->
+                <img src="./images/artist.jpg" alt="" class="artist-image">
+              <!-- </div> -->
+             </div>
+            </div>
+            <div class="col-md-12 album-info">
+              <h2>NEW ALBUM</h2>
+              <p>Available only for subscribers</p>
+            </div>
+          </div>
+        </div>
+       </div>
+       
       </section>
     <section id="search">
-      <div id="search-list" class="search-wrapper"></div>
+      <div id="search-list" class="search-wrapper">
+        <h1 class="search-title">Search</h1>  
+        <div class="row search-info">
+          <label for="search" class="col-md-3">Name</label>
+          <input type="search" id="search" class="col-md-6 search-input">
+          <div class="col-md-3">
+            <a href="#" class="btn-search">Search</a>
+          </div>
+        </div>
+      </div>
     </section>
     <section id="discover">
       <div class="discover-wrapper"></div>
     </section>
   </div>
 
-  <div id="home-body">
-   <div class="container">
 
-   </div>
-   <div class="subscribe-section">
-     <h2 class="subscribe-title">Subscribe<span class="bold">now</span></h2>
-     <div class="row container subscribe-container">
-       <div class="col-md-4">
-         <a href="#" class="btn btn-join">Join now</a>
-       </div>
-       <div class="col-md-8 artist-body">
-        <div class="test">
-          <!-- <div class="col-md-6"> -->
-           <h2 class="artist"><span class ="artist-name">Dean</span><br><span class="artist-last-name">Hen<span class="son">son</span></span></h2>
-          <!-- </div> -->
-          <!-- <div class="col-md-6"> -->
-           <img src="./images/artist.jpg" alt="" class="artist-image">
-         <!-- </div> -->
-        </div>
-       </div>
-       <div class="col-md-12 album-info">
-         <h2>NEW ALBUM</h2>
-         <p>Available only for subscribers</p>
-       </div>
-     </div>
-   </div>
-  </div>
+
+
 
   <script id="template-home-page" type="text/x-handlebars-template">     
     <div class="players-wrapper">      
        <div class="row author">
          <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
        </div>
-       <div class="gap-example row player">
+       <div class="row player">
          <audio class="col-md-12 ">
            <source src="songs/{{filename}}" type="audio/mpeg">
          </audio>
        </div>
        <div class="row align-items-center player-description">
-           <h4 class="col-md-6">Categories: test, test </h4>
+           <h4 class="col-md-6">Categories: {{categories}}</h4>
            <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
        </div>      
    </div>
  </script>
 
   <script id="template-search-page" type="text/x-handlebars-template">
-    <h1>test search</h1>  
+    <div class="search-container container"> 
+      <div class="players-wrapper">      
+        <div class="row author">
+          <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
+        </div>
+        <div class="row player">
+          <audio class="col-md-12 ">
+            <source src="songs/{{filename}}" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="row align-items-center player-description">
+            <h4 class="col-md-6">Categories: test, test </h4>
+            <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
+        </div>      
+    </div>
+    </div>
   </script>
 
   <script id="template-discover-page" type="text/x-handlebars-template">
     <h1>test discover</h1>  
+
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-  <script src="./vendor/green-audio-player.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="./vendor/green-audio-player.js"></script>
   <script src="js/app.js" type="module"></script>
 </body>
 </html>
