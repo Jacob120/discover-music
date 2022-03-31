@@ -52,7 +52,7 @@ class Search {
     
 
     // console.log('gapPlayer', thisSearch.gapPlayer);
-    // console.log('authorandtitle', thisSearch.authorAndTitle.textContent);
+    console.log('authorandtitle', thisSearch.authorAndTitle.textContent);
     // console.log('songDescription', thisSearch.songDescription);
     console.log('searchList', thisSearch.searchList);
 
@@ -79,7 +79,8 @@ class Search {
 
       thisSearch.searchList.forEach(list => {
 
-        const isVisible = thisSearch.authorAndTitle.textContent.includes(value) || thisSearch.songDescription.textContent.includes(value);
+        const isVisible = thisSearch.authorAndTitle.textContent.toLowerCase().includes(value) || 
+                          thisSearch.songDescription.textContent.toLowerCase().includes(value);
         // console.log('player', player);
         list.classList.toggle(classNames.elements.hidden, !isVisible);
         console.log('list', list);
