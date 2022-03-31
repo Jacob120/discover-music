@@ -31,8 +31,14 @@
 
   <div id="pages">
     <section id="home">
+      <div class="row player">
+        <audio class="col-md-12 ">
+          <!-- <source src="songs/{{filename}}" type="audio/mpeg"> -->
+        </audio>
+      </div>
       <div id="home-id" class="home-wrapper"></div>
-      <div id="home-body">  
+
+      <div id="home-body">
         <div class="subscribe-section">
           <h2 class="subscribe-title">Subscribe<span class="bold">now</span></h2>
           <div class="row container subscribe-container">
@@ -56,14 +62,13 @@
           </div>
         </div>
        </div>
-       
-      </section>
+    </section>
     <section id="search">
       <div id="search-list" class="search-wrapper">
-        <h1 class="search-title">Search</h1>  
+        <h1 class="search-title">Search</h1>
         <div class="row search-info">
-          <label for="search" class="col-md-3">Name</label>
-          <input type="search" id="search" class="col-md-6 search-input">
+          <label for="search-id" class="col-md-3">Name</label>
+          <input type="search" id="search-id" class="col-md-6 search-input">
           <div class="col-md-3">
             <a href="#" class="btn-search">Search</a>
           </div>
@@ -75,20 +80,12 @@
     </section>
   </div>
 
-
-
-
-
   <script id="template-home-page" type="text/x-handlebars-template">     
     <div class="players-wrapper">      
        <div class="row author">
          <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
        </div>
-       <div class="row player">
-         <audio class="col-md-12 ">
-           <source src="songs/{{filename}}" type="audio/mpeg">
-         </audio>
-       </div>
+      
        <div class="row align-items-center player-description">
            <h4 class="col-md-6">Categories: {{categories}}</h4>
            <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
@@ -98,20 +95,22 @@
 
   <script id="template-search-page" type="text/x-handlebars-template">
     <div class="search-container container"> 
-      <div class="players-wrapper">      
-        <div class="row author">
-          <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
-        </div>
-        <div class="row player">
-          <audio class="col-md-12 ">
-            <source src="songs/{{filename}}" type="audio/mpeg">
-          </audio>
-        </div>
-        <div class="row align-items-center player-description">
-            <h4 class="col-md-6">Categories: test, test </h4>
-            <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
-        </div>      
-    </div>
+      <ul class="players-wrapper">
+        <li class="search-li">     
+          <div class="row song-author-title">
+            <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
+          </div>
+          <div class="row player">
+            <audio class="col-md-12 ">
+              <source src="songs/{{filename}}" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="row align-items-center player-description">
+              <h4 class="col-md-6">Categories: {{categories}} </h4>
+              <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
+          </div>
+        </li>       
+      </ul>
     </div>
   </script>
 

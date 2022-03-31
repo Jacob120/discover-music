@@ -12,6 +12,15 @@ export const select = {
   },
   nav: {
     links: '.main-nav a',
+  },
+  player: {
+    wrapper: '.players-wrapper',
+    author_title: '.song-author-title',
+    gap_plugin: '.player',
+    description: '.player-description',
+  },
+  search: {
+    input: '.search-input',
   }
 };
 
@@ -21,6 +30,9 @@ export const classNames = {
   },
   pages: {
     active: 'active',
+  },
+  elements: {
+    hidden: 'hide',
   }
 };
 
