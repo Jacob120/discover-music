@@ -30,6 +30,8 @@
   </header>
 
   <div id="pages">
+
+      <!-- Home page -->
     <section id="home">
       <div class="row player">
         <audio class="col-md-12 ">
@@ -37,7 +39,6 @@
         </audio>
       </div>
       <div id="home-id" class="home-wrapper"></div>
-
       <div id="home-body">
         <div class="subscribe-section">
           <h2 class="subscribe-title">Subscribe<span class="bold">now</span></h2>
@@ -63,6 +64,8 @@
         </div>
        </div>
     </section>
+
+    <!-- Search page  -->
     <section id="search">
       <div id="search-list" class="search-wrapper">
         <h1 class="search-title">Search</h1>
@@ -80,12 +83,13 @@
     </section>
   </div>
 
+  <!-- Templates  -->
   <script id="template-home-page" type="text/x-handlebars-template">     
-    <div class="players-wrapper">      
+    <div class="players-wrapper-home">      
        <div class="row author">
          <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
        </div>
-      
+
        <div class="row align-items-center player-description">
            <h4 class="col-md-6">Categories: {{categories}}</h4>
            <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
@@ -93,12 +97,12 @@
    </div>
  </script>
 
-  <script id="template-search-page" type="text/x-handlebars-template">
+  <!-- <script id="template-search-page" type="text/x-handlebars-template">
     <div class="search-container container"> 
       <ul class="players-wrapper">
         <li class="search-li">     
-          <div class="row song-author-title">
-            <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
+          <div class="row ">
+            <h3 class="col-md-12 song-author-title">{{ author }} - {{ title }}</h3>
           </div>
           <div class="row player">
             <audio class="col-md-12 ">
@@ -112,12 +116,29 @@
         </li>       
       </ul>
     </div>
+  </script> -->
+
+  <script id="template-search-page" type="text/x-handlebars-template">    
+      <div id="players_id" class="players-wrapper">          
+        <div class="row ">
+          <h3 class="col-md-12 song-author-title">{{ author }} - {{ title }}</h3>
+        </div>
+        <div class="row player">
+          <audio class="col-md-12 ">
+            <source src="songs/{{filename}}" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="row align-items-center player-description">
+          <h4 class="col-md-6">Categories: {{categories}} </h4>
+          <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
+        </div>              
+      </div>   
   </script>
 
   <script id="template-discover-page" type="text/x-handlebars-template">
     <h1>test discover</h1>  
-
   </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="./vendor/green-audio-player.js"></script>
