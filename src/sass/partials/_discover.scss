@@ -1,0 +1,16 @@
+#discover {
+  background: $color-dark;
+  padding-bottom: $base-size * 5;
+  font-family: $font-header;
+  padding-top: $base-size * 8;
+  text-align: center;
+}
+
+.discover-title {
+  font-size: 60px;
+  font-weight: $font-semibold;
+  color: $color-light;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
+

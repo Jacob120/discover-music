@@ -52,6 +52,13 @@ label {
   letter-spacing: 4px; 
 }
 
+.result {
+  margin: 0 auto;
+  text-align: center;
+  font-weight: $font-semibold;
+  font-size: 30px;
+}
+
 .hide {
   display: none;
 }

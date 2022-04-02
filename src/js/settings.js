@@ -21,6 +21,10 @@ export const select = {
   },
   search: {
     input: '.search-input',
+    searchResult: '.search-result',
+  },
+  button: {
+    searchButton: '.btn-search'
   }
 };
 

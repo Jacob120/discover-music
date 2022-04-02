@@ -33,24 +33,47 @@ class Search {
 
     thisSearch.playerWrapper = document.querySelectorAll(select.player.wrapper); 
     thisSearch.searchInput  = document.querySelector(select.search.input);  
+    thisSearch.searchButton = document.querySelector(select.button.searchButton);
+    thisSearch.searchResult = document.querySelector(select.search.searchResult);
   }
 
   initSearch(){
     const thisSearch = this;  
 
     const arr = Array.from(thisSearch.playerWrapper);  
+    // console.log('length', arr.length);
+    let result = [];
+    let number = result.length;
     
-    thisSearch.searchInput.addEventListener('input', function(e){
-      const value = e.target.value.toLowerCase(); 
-      
+    thisSearch.searchResult.innerHTML = arr.length;
+    
+
+    thisSearch.searchButton.addEventListener('click', function(event){
+      event.preventDefault();
+
+      const value = thisSearch.searchInput.value.toLowerCase();
+      console.log(value);
       arr.forEach((domElement) => {        
    
-        const isVisible = domElement.textContent.toLowerCase().includes(value) ||
-                        domElement.textContent.toLowerCase().includes(value);  
+        const isVisible = domElement.textContent.toLowerCase().includes(value);
 
-        domElement.classList.toggle(classNames.elements.hidden, !isVisible);  
+        if(isVisible == true){
+          domElement.classList.remove(classNames.elements.hidden);
+          if(!result.includes(domElement)){
+            result.push(domElement);
+          }
+        } else if(!isVisible){
+          domElement.classList.add(classNames.elements.hidden);
+          if(result.includes(domElement)){
+            const idIndex = result.indexOf(domElement);
+            result.splice(idIndex, 1);  
+          }
+        }
+        console.log('length', result.length);
+        thisSearch.searchResult.innerHTML = result.length;
       });
     }); 
+    console.log('number', number);
   }
  
 }
