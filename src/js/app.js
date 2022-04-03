@@ -7,10 +7,11 @@ const app = {
   initPages: function(){
     const thisApp = this;
 
+    
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
 
-    const idFromHash = window.location.hash.replace('#', '');    
+    const idFromHash = window.location.hash.replace('#/', '');    
 
     let pageMatchingHash = thisApp.pages[0].id;
 
@@ -27,14 +28,14 @@ const app = {
       link.addEventListener('click', function(event){
         const clickedElement = this;
         event.preventDefault();
-
+        
         /* get page id from href attribute */
         const id = clickedElement.getAttribute('href').replace('#', '');
         /* run thisApp.activatePage with that id */
         thisApp.activatePage(id);
 
         /* change URL hash */
-        window.location.hash = '#' + id;
+        window.location.hash = '#/' + id;
       });
     }
   },
@@ -44,14 +45,16 @@ const app = {
 
     /* add class "active"  to matching pages, remove from non-matching */
     for(let page of thisApp.pages){  
-      page.classList.toggle(classNames.pages.active, page.id == pageId);
+      page.classList.toggle(classNames.pages.active, page.id == pageId); 
     }
+
     /* add class "active"  to matching links, remove from non-matching */
     for(let link of thisApp.navLinks){  
       link.classList.toggle(
         classNames.nav.active, 
         link.getAttribute('href') == '#' + pageId
-      );
+      );               
+    
     }
   },
 
@@ -61,7 +64,16 @@ const app = {
     for (let songData in thisApp.data.songs) {
       new  Home(thisApp.data.songs[songData].id, thisApp.data.songs[songData]);
       new  Search(thisApp.data.songs[songData].id, thisApp.data.songs[songData]);
+      new  Discover(thisApp.data.songs[songData].id, thisApp.data.songs[songData]);
     }    
+  },
+
+  initRandomPlayer: function(){
+    const thisApp = this;
+
+    for (let songData in thisApp.data.songs){
+      console.log('songData', thisApp.data.songs[songData].id);
+    }
   },
 
   initData: function(){
@@ -81,13 +93,7 @@ const app = {
       });    
   },
 
-  // initHome(){
-  //   const thisApp = this;
 
-  //   const homeElement = document.querySelector(select.containerOf.home);
-
-  //   thisApp.home = new Home(homeElement);
-  // },
 
   initSearch(){
     const thisApp = this;
@@ -98,25 +104,22 @@ const app = {
    
   },
 
-  initDiscover(){
-    const thisApp = this;
+  // initDiscover(){
+  //   const thisApp = this;
 
-    const discoverElement = document.querySelector(select.containerOf.discover);
+  //   const discoverElement = document.querySelector(select.containerOf.discover);
 
-    thisApp.discover = new Discover(discoverElement);
-  },
+  //   thisApp.discover = new Discover(discoverElement);
+  // },
 
   init: function () {
     const thisApp = this;
 
     thisApp.initPages();
     thisApp.initData();
-    // thisApp.initHome();
     thisApp.initSearch();
-    thisApp.initDiscover();
-
-  
-
+    // thisApp.initDiscover();
+    thisApp.initRandomPlayer();
   }
 };
 

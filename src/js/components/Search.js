@@ -31,7 +31,7 @@ class Search {
   getElements(){
     const thisSearch = this;
 
-    thisSearch.playerWrapper = document.querySelectorAll(select.player.wrapper); 
+    thisSearch.playerWrapper = document.querySelectorAll(select.player.searchWrapper); 
     thisSearch.searchInput  = document.querySelector(select.search.input);  
     thisSearch.searchButton = document.querySelector(select.button.searchButton);
     thisSearch.searchResult = document.querySelector(select.search.searchResult);
@@ -42,17 +42,15 @@ class Search {
 
     const arr = Array.from(thisSearch.playerWrapper);  
     // console.log('length', arr.length);
-    let result = [];
-    let number = result.length;
+    let result = [];   
     
-    thisSearch.searchResult.innerHTML = arr.length;
-    
+    thisSearch.searchResult.innerHTML = arr.length;    
 
     thisSearch.searchButton.addEventListener('click', function(event){
       event.preventDefault();
 
       const value = thisSearch.searchInput.value.toLowerCase();
-      console.log(value);
+      
       arr.forEach((domElement) => {        
    
         const isVisible = domElement.textContent.toLowerCase().includes(value);
@@ -69,11 +67,11 @@ class Search {
             result.splice(idIndex, 1);  
           }
         }
-        console.log('length', result.length);
+       
         thisSearch.searchResult.innerHTML = result.length;
       });
     }); 
-    console.log('number', number);
+
   }
  
 }

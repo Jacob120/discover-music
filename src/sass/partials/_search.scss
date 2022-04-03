@@ -59,6 +59,18 @@ label {
   font-size: 30px;
 }
 
+.players-search-wrapper {
+  background: $color-dark;
+  display: flex;
+  flex-direction: column;
+  // height: 80vh;
+  max-width: 580px;
+  color: white;
+  margin: 0 auto;
+  padding-top: $base-size * 9;  
+  
+}
+
 .hide {
   display: none;
 }

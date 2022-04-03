@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <div class="main-nav">
+    <div id="main-nav" class="main-nav">
         <a href="#home">HOME</a>
         <a href="#search">SEARCH</a>
         <a href="#discover">DISCOVER</a>
@@ -106,29 +106,8 @@
    </div>
  </script>
 
-  <!-- <script id="template-search-page" type="text/x-handlebars-template">
-    <div class="search-container container"> 
-      <ul class="players-wrapper">
-        <li class="search-li">     
-          <div class="row ">
-            <h3 class="col-md-12 song-author-title">{{ author }} - {{ title }}</h3>
-          </div>
-          <div class="row player">
-            <audio class="col-md-12 ">
-              <source src="songs/{{filename}}" type="audio/mpeg">
-            </audio>
-          </div>
-          <div class="row align-items-center player-description">
-              <h4 class="col-md-6">Categories: {{categories}} </h4>
-              <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
-          </div>
-        </li>       
-      </ul>
-    </div>
-  </script> -->
-
   <script id="template-search-page" type="text/x-handlebars-template">    
-      <div id="players_id" class="players-wrapper">          
+      <div id="{{ id }}" class="players-search-wrapper container">          
         <div class="row ">
           <h3 class="col-md-12 song-author-title">{{ author }} - {{ title }}</h3>
         </div>
@@ -145,8 +124,22 @@
   </script>
 
   <script id="template-discover-page" type="text/x-handlebars-template">
-    <h1>test discover</h1>  
+    <div id="{{ id }}" class="players-discover-wrapper container">          
+      <div class="row ">
+        <h3 class="col-md-12 song-author-title">{{ author }} - {{ title }}</h3>
+      </div>
+      <div class="row player">
+        <audio class="col-md-12 ">
+          <source src="songs/{{filename}}" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="row align-items-center player-description">
+        <h4 class="col-md-6">Categories: {{categories}} </h4>
+        <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
+      </div>              
+    </div>    
   </script>
+  <!-- End of Templates  -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

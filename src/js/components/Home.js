@@ -23,9 +23,10 @@ class Home {
     
     /* find menu container */
     const homeContainer = document.querySelector(select.containerOf.home);
-    /* add element to menu */
-    
+
+    /* add element to menu */    
     homeContainer.appendChild(thisHome.element);  
+    // console.log('homElement', thisHome.data);
   }
 
   /* eslint-disable */ 

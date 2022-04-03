@@ -14,7 +14,8 @@ export const select = {
     links: '.main-nav a',
   },
   player: {
-    wrapper: '.players-wrapper',
+    searchWrapper: '.players-search-wrapper',
+    discoverWrapper: '.players-discover-wrapper',
     author_title: '.song-author-title',
     gap_plugin: '.player',
     description: '.player-description',
