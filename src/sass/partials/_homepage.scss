@@ -9,7 +9,6 @@
   background: $color-dark;
   display: flex;
   flex-direction: column;
-  // height: 80vh;
   max-width: 580px;
   color: white;
   margin: 0 auto;
@@ -35,7 +34,7 @@
 
 .subscribe-section {
   background-image: url("../images/subscribe.jpg");
-  height: 100vh;
+  height: 120vh;
   position: relative;
   background-size: cover;
   background-position: center center;
@@ -44,7 +43,7 @@
 
 .subscribe-title {
   @extend .h2;  
-  margin-top: $base-size * -5;
+  margin-top: $base-size * -7;
   font-weight: $font-semibold;
   color: $color-white;
   font-size: 100px;
@@ -53,7 +52,7 @@
   left: 25%;
 
 
-  .bold {
+  .bold-now {
     font-weight: $font-black;
     padding: $base-size * 3;
   }
@@ -61,10 +60,15 @@
 
 .subscribe-container {
   position: relative;
-  height: 50vh;
+  height: 60vh;
   top: 15%;
 
   padding-bottom: 100px;
+}
+
+.btn-container {
+  padding-top: $base-size * 36;
+  padding-right: $base-size * 1.5;
 }
 
 .btn { 
@@ -75,23 +79,23 @@
   text-decoration: none;
   text-transform: uppercase;
   background-color: $color-main;
-  padding: 15px 15px;
-  border-radius: 10px;
+  padding: 25px 20px;
+  border-radius: 8px;
   letter-spacing: 8px;
-  position: absolute;
-  top: 80%;
 }
 
-.artist-body {
-  position: relative; 
+.artist-container {
+  // position: relative; 
+  // padding-top: $base-size * 25;
 } 
 
 .artist {
+  margin: 0 auto;
   color: $color-white;
   font-family: $font-header;
   font-weight: $font-black;
   font-size: 100px;
-  position: absolute;
+  // position: absolute;
   top: 70%;
   left: 5%;
   z-index: 3;
@@ -108,13 +112,13 @@
 }
 
 .artist-image {
-  position: absolute;
-  
-  z-index: 2;
-  height: 578px;
-  width: 465px;
-  left: 43%;
-  top: -5%;
+  // position: absolute;  
+  // z-index: 2;
+  // height: 578px;
+  // width: 465px;
+  // left: 43%;
+  // top: -5%;
+  padding-bottom: $base-size * 10;
 }
 
 .album-info {
@@ -122,7 +126,7 @@
   flex-direction: column;
   width: 100%;
   align-items: flex-end;
-  position: absolute;
+  // position: absolute;
   font-size: 40px;
   top: 130%;
   left: 10%;

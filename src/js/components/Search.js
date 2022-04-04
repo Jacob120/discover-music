@@ -41,7 +41,7 @@ class Search {
     const thisSearch = this;  
 
     const arr = Array.from(thisSearch.playerWrapper);  
-    // console.log('length', arr.length);
+ 
     let result = [];   
     
     thisSearch.searchResult.innerHTML = arr.length;    

@@ -9,9 +9,17 @@ body {
   color: $color-dark;
 }
 
-.container {
-  max-width: 1140px;
+.row {
   margin: 0 auto;
-  padding: 0 20px;
 }
 
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  // padding: 0 20px;
+}
+
+
+.green-audio-player .slider .gap-progress .pin {
+  background-color: #d61818;
+}

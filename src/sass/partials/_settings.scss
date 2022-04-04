@@ -13,11 +13,3 @@ $font-bold: 700;
 $font-black: 900;
 
 $base-size: 12px;
-
-@mixin flex($flex-direction, $align-items, $justify-content) {
-  display: flex;
-  flex-direction: $flex-direction;
-  align-items: $align-items;
-  justify-content: $justify-content;
-}
-
