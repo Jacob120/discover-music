@@ -14,6 +14,23 @@
   padding-top: $base-size * 9;    
 }
 
+.categories-links {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-horizontal {
+  list-style-type: none;
+  text-align: left;
+    li {
+      display: inline;
+    }
+
+}
+
 /* Subscribe section */
 
 .subscribe-section {

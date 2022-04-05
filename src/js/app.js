@@ -86,24 +86,11 @@ const app = {
       });    
   },
 
-
-
-  initSearch(){
-    const thisApp = this;
-
-    const searchElement = document.querySelector(select.containerOf.search);
-
-    thisApp.search = new Search(searchElement);   
-  },
-
-
-
   init: function () {
     const thisApp = this;
 
     thisApp.initPages();
-    thisApp.initData();
-    thisApp.initSearch();
+    thisApp.initData(); 
   }
 };
 
