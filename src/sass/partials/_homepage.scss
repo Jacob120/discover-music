@@ -110,20 +110,22 @@
   flex-direction: column;
   width: 100%;
   align-items: flex-end;
-  // position: absolute;
   font-size: 40px;
-  top: 130%;
+  position: absolute;
+  top: 110%;
   left: 10%;
   letter-spacing: $base-size;
   
   h2 {
     font-weight: $font-bold;
     color: $color-light;
+    margin: 0;
   }
 
   p {
     font-weight: $font-semibold;
-    color: $color-white;    
+    color: $color-white;
+    margin: 0;
   }
 }
 
