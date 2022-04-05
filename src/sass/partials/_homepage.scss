@@ -1,34 +1,20 @@
 #home-id {
   background: $color-dark;
-  padding-bottom: $base-size * 5;
+  padding-bottom: $base-size * 10;
 }
 
 /* Audio players section */
 
-.players-wrapper {
+.players-wrapper-home {
   background: $color-dark;
   display: flex;
   flex-direction: column;
   max-width: 580px;
-  color: white;
   margin: 0 auto;
-  padding-top: $base-size * 9;  
-  
+  padding-top: $base-size * 9;    
 }
 
-.player {
-  width: 580px;
-  margin: 60px auto;
- 
-}
 
-.author {
-  text-align: center;
-}
-
-.ranking {
-  text-align: end;
-}
 
 /* Subscribe section */
 
@@ -50,7 +36,6 @@
   position: absolute;
   letter-spacing: $base-size;
   left: 25%;
-
 
   .bold-now {
     font-weight: $font-black;
@@ -84,10 +69,6 @@
   letter-spacing: 8px;
 }
 
-.artist-container {
-  // position: relative; 
-  // padding-top: $base-size * 25;
-} 
 
 .artist {
   margin: 0 auto;
@@ -95,16 +76,17 @@
   font-family: $font-header;
   font-weight: $font-black;
   font-size: 100px;
-  // position: absolute;
-  top: 70%;
-  left: 5%;
+  position: absolute;
+  top: 60%;
+  padding-left: $base-size * 4;
   z-index: 3;
-  letter-spacing: $base-size;
+  letter-spacing: $base-size * 2;
+  line-height: 1;
 }
 
 .artist-last-name {
   position: absolute;
-  left: 25%;
+  padding-left: $base-size * 6;
 }
 
 .son {
@@ -112,13 +94,17 @@
 }
 
 .artist-image {
+  padding-left: $base-size * 30;
+  padding-top: $base-size * 3;
   // position: absolute;  
   // z-index: 2;
-  // height: 578px;
-  // width: 465px;
   // left: 43%;
   // top: -5%;
-  padding-bottom: $base-size * 10;
+  // padding-bottom: $base-size * 10;
+  img {
+    height: 578px;
+    width: 465px;    
+  }
 }
 
 .album-info {
@@ -132,7 +118,6 @@
   left: 10%;
   letter-spacing: $base-size;
   
-  
   h2 {
     font-weight: $font-bold;
     color: $color-light;
@@ -142,4 +127,28 @@
     font-weight: $font-semibold;
     color: $color-white;    
   }
+}
+
+/* Media queries */
+
+@media (max-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 991px;
+  }
+
+  .subscribe-title{
+    font-size: $base-size * 4;
+    position: relative;
+    // text-align: center;
+    margin: 0 auto;
+  }
+
+  .artist-image {
+    img {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+
 }

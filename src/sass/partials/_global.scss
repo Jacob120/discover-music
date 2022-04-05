@@ -5,8 +5,7 @@
 body {
   margin: 0;
   font-family: $font-header;
-  line-height: 1.7;
-  color: $color-dark;
+  line-height: 1.7; 
 }
 
 .row {
@@ -16,10 +15,61 @@ body {
 .container {
   max-width: 1240px;
   margin: 0 auto;
-  // padding: 0 20px;
 }
-
 
 .green-audio-player .slider .gap-progress .pin {
   background-color: #d61818;
+}
+
+footer {
+  background-color: $color-dark;
+  font-size: 20px;
+  font-weight: $font-regular;
+  color: $color-white;
+  padding: $base-size 0;
+  text-align: center;
+
+  p {
+    margin: 0 auto;
+  }
+}
+
+.player {
+  width: 580px;
+  margin: 0 auto; 
+}
+
+.song-author-title {
+  h3{    
+    font-size: $base-size * 2.5;
+    font-weight: $font-regular;
+    color: $color-white;
+    text-align: center;
+  }
+}
+
+.player-description {
+  width: 580px;
+  margin-top: $base-size * 2;
+  display: inline-flex;
+  h4 {
+    font-size: 20px;
+    font-weight: $font-regular;
+    color: $color-light;
+  }
+}
+
+.categories {
+  list-style: none;
+  display: flex;
+  padding: 0;
+} 
+
+.ranking {
+  text-align: end;
+  color: $color-light;
+}
+
+.hide {
+  display: none;
 }

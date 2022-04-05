@@ -3,8 +3,7 @@
   padding-bottom: $base-size * 5;
   font-family: $font-header;
   padding-top: $base-size * 8;
-  text-align: center;
-  color: $color-white;
+  text-align: center;  
 }
 
 .discover-title {
@@ -27,14 +26,12 @@
   background: $color-dark;
   display: flex;
   flex-direction: column;
-  max-width: 580px;
+  width: 580px;
   color: white;
   margin: 0 auto;
-  padding-top: $base-size;  
-  
+  padding-top: $base-size;    
 }
 
 .hide {
   display: none;
 }
-  
