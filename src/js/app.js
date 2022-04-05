@@ -68,13 +68,6 @@ const app = {
     }    
   },
 
-  initRandomPlayer: function(){
-    const thisApp = this;
-
-    for (let songData in thisApp.data.songs){
-      console.log('songData', thisApp.data.songs[songData].id);
-    }
-  },
 
   initData: function(){
     const thisApp = this;
@@ -100,17 +93,10 @@ const app = {
 
     const searchElement = document.querySelector(select.containerOf.search);
 
-    thisApp.search = new Search(searchElement);
-   
+    thisApp.search = new Search(searchElement);   
   },
 
-  // initDiscover(){
-  //   const thisApp = this;
 
-  //   const discoverElement = document.querySelector(select.containerOf.discover);
-
-  //   thisApp.discover = new Discover(discoverElement);
-  // },
 
   init: function () {
     const thisApp = this;
@@ -118,8 +104,6 @@ const app = {
     thisApp.initPages();
     thisApp.initData();
     thisApp.initSearch();
-    // thisApp.initDiscover();
-    thisApp.initRandomPlayer();
   }
 };
 
