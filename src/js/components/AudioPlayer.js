@@ -1,7 +1,7 @@
 import utils from '../utils.js';
 
 class AudioPlayer { // eslint-disable-line
-  constructor(container, title, author, filename, categories, ranking, wrapperClass, audioPluginClass){
+  constructor(container, title, author, filename, categories, ranking, wrapperClass, audioPluginClass, id){
     const thisAudioPlayer = this;
 
     thisAudioPlayer.container = container;
@@ -12,6 +12,7 @@ class AudioPlayer { // eslint-disable-line
     thisAudioPlayer.ranking = ranking;
     thisAudioPlayer.wrapperClass = wrapperClass;
     thisAudioPlayer.audioPluginClass = audioPluginClass;
+    thisAudioPlayer.id = id;
     thisAudioPlayer.render();
   }
 
@@ -33,7 +34,7 @@ class AudioPlayer { // eslint-disable-line
     }
     
     thisAudioPlayer.element = utils.createDOMFromHTML(`
-    <div class="${thisAudioPlayer.wrapperClass} container">          
+    <div id="${thisAudioPlayer.id}" class="${thisAudioPlayer.wrapperClass} container">          
     <div class="row song-author-title">
       <h3 class="col-md-12">${thisAudioPlayer.author} - ${thisAudioPlayer.title}</h3>
     </div>  
