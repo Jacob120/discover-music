@@ -41,7 +41,7 @@ class Discover {
     const arr = Array.from(thisDiscover.playerWrapper);
 
     const randomNumber = Math.floor(Math.random() * arr.length) +1;
-    console.log('randomnumber', randomNumber);
+    // console.log('randomnumber', randomNumber);
 
     arr.forEach((domElement) => {
       domElement.classList.add(classNames.elements.hidden);   

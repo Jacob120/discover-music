@@ -1,19 +1,15 @@
 export const select = {
-  templateOf: {
-    homePage: '#template-home-page',
-    searchPage: '#template-search-page',
-    discoverPage: '#template-discover-page',
-  },
   containerOf: {    
     pages: '#pages',
-    home: '.home-wrapper',
-    search: '.search-wrapper',
-    discover: '.discover-wrapper',
+    homePage: '.home-wrapper',
+    searchPage: '.search-wrapper',
+    discoverPage: '.discover-wrapper',
   },
   nav: {
     links: '.main-nav a',
   },
   player: {
+    homeWrapper: '.players-home-wrapper',
     searchWrapper: '.players-search-wrapper',
     discoverWrapper: '.players-discover-wrapper',
     author_title: '.song-author-title',
@@ -34,10 +30,18 @@ export const classNames = {
     active: 'active',
   },
   pages: {
-    active: 'active',
+    active: 'active',    
   },
   elements: {
     hidden: 'hide',
+    homePageSongs: 'players-home-wrapper',
+    searchPageSongs: 'players-search-wrapper',
+    discoverPageSongs: 'players-discover-wrapper',
+  },
+  audioPlayer: {
+    home: 'player-homepage',
+    search: 'player-searchpage',
+    discover: 'player-discoverpage',
   }
 };
 
@@ -48,8 +52,8 @@ export const settings = {
   },
 };
 
-export const templates = {
-  homePage: Handlebars.compile(document.querySelector(select.templateOf.homePage).innerHTML),
-  searchPage: Handlebars.compile(document.querySelector(select.templateOf.searchPage).innerHTML),
-  discoverPage: Handlebars.compile(document.querySelector(select.templateOf.discoverPage).innerHTML),
-};
+// export const templates = {
+//   homePage: Handlebars.compile(document.querySelector(select.templateOf.homePage).innerHTML),
+//   searchPage: Handlebars.compile(document.querySelector(select.templateOf.searchPage).innerHTML),
+//   discoverPage: Handlebars.compile(document.querySelector(select.templateOf.discoverPage).innerHTML),
+// };

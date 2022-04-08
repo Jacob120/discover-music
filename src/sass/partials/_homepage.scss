@@ -5,7 +5,7 @@
 
 /* Audio players section */
 
-.players-wrapper-home {
+.players-home-wrapper {
   background: $color-dark;
   display: flex;
   flex-direction: column;
@@ -25,9 +25,10 @@
 .list-horizontal {
   list-style-type: none;
   text-align: left;
-    li {
-      display: inline;
-    }
+
+  li {
+    display: inline;
+  }
 
 }
 

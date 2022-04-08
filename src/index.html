@@ -7,7 +7,6 @@
   <title>TASTE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./vendor/green-audio-player.css">
   <link rel="stylesheet" href="css/style.css">
@@ -33,11 +32,6 @@
 
       <!-- Home page -->
     <section id="home">
-      <!-- <div class="row player">
-        <audio class="col-md-12 ">
-          <source src="songs/{{filename}}" type="audio/mpeg">
-        </audio>
-      </div> -->
       <div class="categories-links container">
         <p>Categories</p>
         <ul class="list-horizontal">
@@ -46,7 +40,7 @@
           <li>test</li>
         </ul>
       </div>
-      <div id="home-id" class="home-wrapper"></div>
+      <div id="home-id" class="home-wrapper"></div> <!-- insert AudioPlayer.js here-->
       <div id="home-body">
         <div class="subscribe-section">
           <h2 class="subscribe-title container">Subscribe<span class="bold-now">now</span></h2>
@@ -76,7 +70,7 @@
 
     <!-- Search page  -->
     <section id="search">
-      <div id="search-list" class="search-wrapper ">
+      <div id="search-list" class="search-wrapper "> <!-- insert AudioPlayer.js here-->
         <h1 class="search-title">Search</h1>
         <div class="row search-info">
           <label for="search-id" class="col-md-3">Name</label>
@@ -105,89 +99,7 @@
     <p>All rights reserved</p>
   </footer>
 
-  <!-- Templates  -->
-  <script id="template-home-page" type="text/x-handlebars-template">     
-    <div class="players-wrapper-home">      
-       <div class="row song-author-title">
-         <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
-       </div>
-       <!-- <div class="row player-description">
-           <h4 class="col-md-3">Categories:</h4>
-           <ul class="col-md-5 categories">
-             {{#each categories}}
-             <li>{{this}} &nbsp;</li>
-             {{/each}}
-           </ul>
-           <h4 class="col-md-4 ranking"># {{ ranking }} in the ranking</h4>
-       </div>       -->
-       <div class="player">
-        <audio class="col-md-12 ">
-          <source src="songs/{{filename}}" type="audio/mpeg">
-        </audio>
-      </div>
-      <div class="row align-items-center player-description">
-        <h4 class="col-md-6">Categories: {{categories}} </h4>
-        <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
-      </div>              
-   </div>
- </script>
-
-  <script id="template-search-page" type="text/x-handlebars-template">    
-      <div id="{{ id }}" class="players-search-wrapper container">          
-        <div class="row song-author-title">
-          <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
-        </div>
-     
-        <!-- <div class="row player-description">
-            <h4 class="col-md-3">Categories:</h4>
-            <ul class="col-md-5 categories">
-              {{#each categories}}
-              <li>{{this}} &nbsp;</li>
-              {{/each}}
-            </ul>
-            <h4 class="col-md-4 ranking"># {{ ranking }} in the ranking</h4>
-        </div>       -->
-        <div class="player">
-         <audio class="col-md-12 ">
-           <source src="songs/{{filename}}" type="audio/mpeg">
-         </audio>
-       </div>
-       <div class="row align-items-center player-description">
-         <h4 class="col-md-6">Categories: {{categories}} </h4>
-         <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
-       </div>              
-      </div>   
-  </script>
-
-  <script id="template-discover-page" type="text/x-handlebars-template">
-    <div id="{{ id }}" class="players-discover-wrapper container">          
-      <div class="row song-author-title">
-        <h3 class="col-md-12">{{ author }} - {{ title }}</h3>
-      </div>  
-      <!-- <div class="row player-description">
-          <h4 class="col-md-3">Categories:</h4>
-          <ul class="col-md-5 categories">
-            {{#each categories}}
-            <li>{{this}} &nbsp;</li>
-            {{/each}}
-          </ul>
-          <h4 class="col-md-4 ranking"># {{ ranking }} in the ranking</h4>
-      </div>       -->
-      <div class="player">
-       <audio class="col-md-12 ">
-         <source src="songs/{{filename}}" type="audio/mpeg">
-       </audio>
-     </div>
-     <div class="row align-items-center player-description">
-       <h4 class="col-md-6">Categories: {{categories}} </h4>
-       <h4 class="col-md-6 ranking"># {{ ranking }} in the ranking</h4>
-     </div>              
-    </div>    
-  </script>
-  <!-- End of Templates  -->
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
   <script src="./vendor/green-audio-player.js"></script>
   <script src="js/app.js" type="module"></script>
 </body>

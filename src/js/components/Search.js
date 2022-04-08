@@ -35,6 +35,8 @@ class Search {
     thisSearch.searchInput  = document.querySelector(select.search.input);  
     thisSearch.searchButton = document.querySelector(select.button.searchButton);
     thisSearch.searchResult = document.querySelector(select.search.searchResult);
+
+    
   }
 
   initSearch(){
@@ -54,7 +56,7 @@ class Search {
       arr.forEach((domElement) => {        
    
         const isVisible = domElement.textContent.toLowerCase().includes(value);
-
+      
         if(isVisible == true){
           domElement.classList.remove(classNames.elements.hidden);
           if(!result.includes(domElement)){
@@ -66,7 +68,9 @@ class Search {
             const idIndex = result.indexOf(domElement);
             result.splice(idIndex, 1);  
           }
+        
         }
+       
        
         thisSearch.searchResult.innerHTML = result.length;
       });
