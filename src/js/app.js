@@ -1,5 +1,6 @@
 import {select, classNames, settings} from './settings.js';
 import AudioPlayer from './components/AudioPlayer.js';
+import utils from './utils.js';
 
 const app = {
   initPages: function(){
@@ -84,12 +85,70 @@ const app = {
 
     thisApp.generateDOMElement(select.containerOf.homePage, thisApp.data, classNames.elements.homePageSongs, classNames.audioPlayer.home);
 
-    console.log('data', thisApp.data);
+    thisApp.playerWrapper = document.querySelectorAll(select.player.homeWrapper);  
+    thisApp.categoryContainer = document.querySelector(select.containerOf.categoriesContainer);    
+    thisApp.categoryFilter = document.querySelectorAll(select.filter.dataCategories);
 
-    for(let categories of thisApp.data){
-      // console.log('categories', categories);
+    /* Create list of links from categories */
+    let allCategories = [];
+
+    for(let data of thisApp.data){    
+
+      for(let category of data.categories){    
+     
+        if(!allCategories.includes(category)){
+          allCategories.push(category);
+        } else {
+          const idIndex = allCategories.indexOf(category);
+          allCategories.splice(idIndex, 0);
+        }     
+      } 
     }
 
+    for (let singleCategory of allCategories){
+      thisApp.categoryElement = utils.createDOMListFromHTML(`<a href="#" link-category="${ singleCategory }"> ${ singleCategory } </a>`);
+      thisApp.categoryContainer.appendChild(thisApp.categoryElement);
+    }
+    /* End of create list of links from categories */
+    
+    /* Filter songs by categories */
+    thisApp.categoryContainer.addEventListener('click', function(e){
+      e.preventDefault();
+      
+      const clickedElement = e.target;
+
+      thisApp.playerWrapper = document.querySelectorAll(select.player.homeWrapper);
+      thisApp.categoryLink = document.querySelectorAll(select.filter.linkCategory);         
+
+
+      if(clickedElement != null){     
+
+        for(let link of thisApp.categoryLink){ 
+
+          if(link.classList.contains(classNames.elements.clicked)){         
+            link.classList.remove(classNames.elements.clicked);
+            for (let wrapper of thisApp.playerWrapper) {
+              wrapper.classList.remove(classNames.elements.hidden);
+            }
+          
+          } else if(link.getAttribute('link-category').includes(clickedElement.getAttribute('link-category')) ){                
+            link.classList.add(classNames.elements.clicked);
+
+            for (let wrapper of thisApp.playerWrapper){
+              wrapper.classList.remove(classNames.elements.hidden);
+
+              const element = wrapper.querySelector(select.filter.dataCategories);        
+           
+              if(!element.getAttribute('data-categories').includes(clickedElement.getAttribute('link-category').toLowerCase())){
+                wrapper.classList.add(classNames.elements.hidden);
+              }      
+            }
+          } 
+    
+        }
+      } 
+    });
+    /* End of filter */
 
     GreenAudioPlayer.init({ // eslint-disable-line no-undef
       selector: '.player-homepage', 
@@ -118,10 +177,9 @@ const app = {
 
       const value = searchInput.value.toLowerCase();
       
-      arr.forEach((domElement) => {        
-   
+      arr.forEach((domElement) => {            
         const isVisible = domElement.textContent.toLowerCase().includes(value);
-      
+        console.log('domEle', domElement.querySelector(select.filter.dataCategories));
         if(isVisible == true){
           domElement.classList.remove(classNames.elements.hidden);
           if(!result.includes(domElement)){

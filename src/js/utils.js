@@ -7,6 +7,10 @@ utils.createDOMFromHTML = function(htmlString) {
   return div;
 };
 
-
+utils.createDOMListFromHTML = function(htmlString) {
+  let list = document.createElement('li');
+  list.innerHTML = htmlString.trim();
+  return list;
+};
 
 export default utils;

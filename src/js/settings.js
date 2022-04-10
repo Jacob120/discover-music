@@ -4,6 +4,11 @@ export const select = {
     homePage: '.home-wrapper',
     searchPage: '.search-wrapper',
     discoverPage: '.discover-wrapper',
+    categoriesContainer: '.categories-links .list',  
+  },
+  filter: {
+    dataCategories: '[data-categories]',
+    linkCategory: '.list a',
   },
   nav: {
     links: '.main-nav a',
@@ -34,6 +39,7 @@ export const classNames = {
   },
   elements: {
     hidden: 'hide',
+    clicked: 'clicked',
     homePageSongs: 'players-home-wrapper',
     searchPageSongs: 'players-search-wrapper',
     discoverPageSongs: 'players-discover-wrapper',
