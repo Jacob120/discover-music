@@ -2,7 +2,7 @@
   background: $color-dark;
   padding-bottom: $base-size * 5;
   font-family: $font-header;
-  text-align: center;
+
   padding-top: $base-size * 4;
 }
 
@@ -13,6 +13,7 @@
   text-transform: uppercase;
   letter-spacing: 8px;
   margin-top: 0;
+  text-align: center;
 }
 
 .discover-subtitle {
@@ -21,18 +22,16 @@
   font-weight: $font-semibold;
   letter-spacing: 8px;
   margin: 50px auto;
+  text-align: center;
 }
 
-.players-discover-wrapper {
-  background: $color-dark;
-  display: flex;
-  flex-direction: column;
-  width: 580px;
-  color: white;
-  margin: 0 auto;
-  padding-top: $base-size;    
-}
 
 .hide {
   display: none;
+}
+
+@media (max-width: 768px) and (max-width: 991px) {
+  .players-discover-wrapper {
+    padding-top: $base-size * 2;
+  }
 }

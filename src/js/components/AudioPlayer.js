@@ -42,7 +42,7 @@ class AudioPlayer { // eslint-disable-line
     }
     
     thisAudioPlayer.element = utils.createDOMFromHTML(`
-    <div id="${thisAudioPlayer.id}" class="${thisAudioPlayer.wrapperClass} container">          
+    <div id="${thisAudioPlayer.id}" class="${thisAudioPlayer.wrapperClass} players-wrapper container">          
     <div class="row song-author-title">
       <h3 class="col-md-12">${thisAudioPlayer.author} - ${thisAudioPlayer.title}</h3>
     </div>  
@@ -51,7 +51,7 @@ class AudioPlayer { // eslint-disable-line
        <source src="songs/${thisAudioPlayer.filename}" type="audio/mpeg">
      </audio>
    </div>
-   <div class="row align-items-center player-description">
+   <div class="row player-description">
      <h4 class="col-md-6" data-categories="${dataCategory}">Categories: ${categoryList} </h4>
      <h4 class="col-md-6 ranking"># ${thisAudioPlayer.ranking} in the ranking</h4>
    </div>              

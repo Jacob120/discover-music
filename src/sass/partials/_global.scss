@@ -17,8 +17,17 @@ body {
   margin: 0 auto;
 }
 
+.players-wrapper {
+  background: $color-dark;
+  display: flex;
+  flex-direction: column;
+  max-width: 580px;
+  margin: 0 auto;
+  padding-top: $base-size * 7; 
+}
+
 .green-audio-player .slider .gap-progress .pin {
-  background-color: #d61818;
+  background-color: $color-main;
 }
 
 footer {
@@ -74,4 +83,14 @@ footer {
 
 .hide {
   display: none;
+}
+
+@media (max-width: 768px) and (max-width: 991px) {
+  .player-global {
+    width: 90%;
+  }
+
+  .player-description {
+    width: 90%;
+  }
 }

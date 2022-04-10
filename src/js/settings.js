@@ -21,11 +21,12 @@ export const select = {
     author_title: '.song-author-title',
     gap_plugin: '.player',
     description: '.player-description',
+    audio: 'audio',
   },
   search: {
     input: '.search-input',
     searchResult: '.search-result',
-    categoryOption: '.category-option',
+   
   },
   button: {
     searchButton: '.btn-search'

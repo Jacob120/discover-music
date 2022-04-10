@@ -88,7 +88,8 @@ const app = {
     thisApp.playerWrapper = document.querySelectorAll(select.player.homeWrapper);  
     thisApp.categoryContainer = document.querySelector(select.containerOf.categoriesContainer);    
     thisApp.categoryFilter = document.querySelectorAll(select.filter.dataCategories);
-
+    thisApp.audio = document.querySelectorAll(select.player.audio);
+ 
     /* Create list of links from categories */
     let allCategories = [];
 
@@ -187,9 +188,7 @@ const app = {
       thisApp.selectContainer.appendChild(thisApp.categoryElement);
     }
 
-    thisApp.categoryOption = document.querySelector(select.search.categoryOption);
-
-
+    
     /* End of create list of categories... */
    
     const arr = Array.from(thisApp.playerWrapper);  
@@ -201,7 +200,7 @@ const app = {
       e.preventDefault();
       const clickedElement = e.target.value;
       optionValue = [];
-      console.log('undef', clickedElement == null);
+    
       optionValue.push(clickedElement);  
     });
     thisApp.searchResult.innerHTML = arr.length;    
@@ -278,9 +277,7 @@ const app = {
 
   init: function () {
     const thisApp = this;
-
-    thisApp.initPages();    
-    
+    thisApp.initPages();      
   }
 };
 

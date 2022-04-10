@@ -5,17 +5,8 @@
 .home-wrapper {
   padding-bottom: $base-size * 7;
 }
-/* Audio players section */
 
-.players-home-wrapper {
-  background: $color-dark;
-  display: flex;
-  flex-direction: column;
-  max-width: 580px;
-  margin: 0 auto;
-  padding-top: $base-size * 9;
-  // padding-bottom: $base-size * 16;    
-}
+/* Audio players section */
 
 .categories-links {
   display: flex;
@@ -37,7 +28,8 @@
   padding-left: 10px;
 
   .clicked { 
-    color: $color-main;}
+    color: $color-main;
+  }
 
   li {
     display: inline;
@@ -125,7 +117,7 @@
   line-height: 1;
 }
 
-.artist-last-name {
+.artist-lastname {
   position: absolute;
   padding-left: $base-size * 6;
 }
@@ -137,14 +129,10 @@
 .artist-image {
   padding-left: $base-size * 30;
   padding-top: $base-size * 3;
-  // position: absolute;  
-  // z-index: 2;
-  // left: 43%;
-  // top: -5%;
-  // padding-bottom: $base-size * 10;
+
   img {
-    height: 578px;
-    width: 465px;    
+    height: 100%;
+    max-width: 465px;    
   }
 }
 
@@ -172,31 +160,82 @@
   }
 }
 
+.hide {
+  display: none;
+}
+
 /* Media queries */
 
 @media (max-width: 768px) and (max-width: 991px) {
-  .container {
-    max-width: 991px;
-  }
+  .categories-links {
+    padding: ($base-size * 2) 0;
+    width: 90%;
+    align-items: flex-start;
 
-  .subscribe-title{
-    font-size: $base-size * 4;
-    position: relative;
-    // text-align: center;
-    margin: 0 auto;
-  }
+    p {
+      margin: 0;
+    }
 
-  .artist-image {
-    img {
-      width: 50%;
-      height: 50%;
+    .list {
+      margin: 0;
     }
   }
 
+  .players-home-wrapper {
+    padding-top: $base-size;
+  }
 
-}
+  .subscribe-section {
+    .subscribe-title {
+      font-size: $base-size * 3;
+      left: 10%;
+      margin: 0 auto;
+      letter-spacing: 4px;
+    }
 
-.hide {
-  display: none;
+    .bold-now {
+      padding: 0;
+      padding-left: $base-size;
+    }
+
+    .subscribe-container {
+      justify-content: space-around;
+
+      .btn-container {
+        padding: 0;
+        padding-bottom: $base-size;
+        margin: 0 auto;
+        text-align: center;
+
+        .btn {
+          font-size: $base-size * 2;
+        }
+      }
+
+      .artist-image {   
+        padding: 0;
+        text-align: center;
+
+        img {
+          width: 90%;
+        }
+      }
+
+      .artist {
+        font-size: $base-size * 5;
+        letter-spacing: 4px;
+      }
+
+      .artist-lastname {
+        padding: 0;
+      }
+
+      .album-info {
+        font-size: $base-size * 3;
+        align-items: flex-start;
+        letter-spacing: 4px;
+      }
+    }
+  }
 }
 

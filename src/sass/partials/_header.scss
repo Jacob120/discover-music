@@ -57,10 +57,41 @@
     color: $color-white;
     text-decoration: none;
     text-align: center;
-    padding: $base-size * 2;
+    padding: 0 ($base-size * 6);
+    color: $color-light;
   }
 
-  &.active {
-    background: white;
+  a.active {
+    color: $color-white;
+  }
+
+  a:hover {
+    color: $color-white;
+  }
+}
+
+@media (max-width: 768px) and (max-width: 991px) {
+  .splash {
+    top: 40%;
+  }
+
+  .logo {
+    &__title {
+      font-size: $base-size * 6;
+      letter-spacing: 8px;
+    }
+
+    &__subtitle {
+      left: 10%;
+      margin: 20px auto;
+    }
+  }
+
+  .main-nav {
+    padding: 0;
+
+    a{
+      padding: 0 $base-size;
+    }
   }
 }
