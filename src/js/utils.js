@@ -13,4 +13,12 @@ utils.createDOMListFromHTML = function(htmlString) {
   return list;
 };
 
+utils.createDOMOptionFromHTML = function(htmlString) {
+  let option = document.createElement('option');
+  option.classList.add('category-option');
+  option.innerHTML = htmlString.trim();
+  option.value = option.textContent;
+  return option;
+};
+
 export default utils;

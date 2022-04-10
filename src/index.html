@@ -72,12 +72,20 @@
       <div id="search-list" class="search-wrapper ">
         <!-- insert AudioPlayer.js here-->
         <h1 class="search-title">Search</h1>
-        <div class="row search-info">
-          <label for="search-id" class="col-md-3">Name</label>
-          <input type="search" id="search-id" class="col-md-6 search-input">
-          <div class="col-md-3">
-            <a href="#search" class="btn-search">Search</a>
+        <div class="row search-info container">
+          <div class="col-md-6 name-search">
+            <label for="search-id">Name</label>
+            <input type="search" id="search-id" class="search-input">
           </div>
+          <div class="col-md-6">
+            <label for="category-id" class="">Category</label>
+            <select id="category-id" class="select-container">
+              <option selected value=" "></option>             
+            </select>
+          </div>
+        </div>
+        <div class="search-btn-container">
+          <a href="#search" class="btn-search btn">Search</a>
         </div>
         <h2 class="result">We have found <span class="search-result"></span> songs</h2>
       </div>

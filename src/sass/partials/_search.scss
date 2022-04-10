@@ -8,7 +8,7 @@
 
 .search-info {
   align-items: center;
-  justify-content: center;
+  justify-content:space-between;
 }
 
 .search-title {
@@ -29,7 +29,6 @@ label {
   letter-spacing: 8px;  
 }
 
-
 .search-input {
   background: $color-white;
   width: 350px;
@@ -38,6 +37,27 @@ label {
   border: none;
   margin: 40px 20px;
   font-size: 20px;
+}
+
+.name-search {
+  text-align: end;
+}
+
+select {
+  background: $color-white;
+  width: 350px;
+  height: 60px;
+  border-radius: 8px;
+  border: none;
+  margin: 40px 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.search-btn-container {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: $base-size * 4;
 }
 
 .btn-search { 

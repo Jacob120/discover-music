@@ -4,7 +4,8 @@ export const select = {
     homePage: '.home-wrapper',
     searchPage: '.search-wrapper',
     discoverPage: '.discover-wrapper',
-    categoriesContainer: '.categories-links .list',  
+    categoriesContainer: '.categories-links .list', 
+    selectContainer: '.select-container' 
   },
   filter: {
     dataCategories: '[data-categories]',
@@ -24,6 +25,7 @@ export const select = {
   search: {
     input: '.search-input',
     searchResult: '.search-result',
+    categoryOption: '.category-option',
   },
   button: {
     searchButton: '.btn-search'
@@ -43,6 +45,7 @@ export const classNames = {
     homePageSongs: 'players-home-wrapper',
     searchPageSongs: 'players-search-wrapper',
     discoverPageSongs: 'players-discover-wrapper',
+    selected: '.selected',
   },
   audioPlayer: {
     home: 'player-homepage',

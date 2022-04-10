@@ -129,8 +129,7 @@ const app = {
             link.classList.remove(classNames.elements.clicked);
             for (let wrapper of thisApp.playerWrapper) {
               wrapper.classList.remove(classNames.elements.hidden);
-            }
-          
+            }          
           } else if(link.getAttribute('link-category').includes(clickedElement.getAttribute('link-category')) ){                
             link.classList.add(classNames.elements.clicked);
 
@@ -161,38 +160,79 @@ const app = {
 
     thisApp.generateDOMElement(select.containerOf.searchPage, thisApp.data, classNames.elements.searchPageSongs, classNames.audioPlayer.search);
 
-    const playerWrapper = document.querySelectorAll(select.player.searchWrapper);    
-    const searchInput  = document.querySelector(select.search.input);  
-    const searchButton = document.querySelector(select.button.searchButton);
-    const searchResult = document.querySelector(select.search.searchResult);    
-   
-    const arr = Array.from(playerWrapper);  
- 
-    let result = [];   
+    thisApp.playerWrapper = document.querySelectorAll(select.player.searchWrapper);    
+    thisApp.searchInput  = document.querySelector(select.search.input);  
+    thisApp.searchButton = document.querySelector(select.button.searchButton);
+    thisApp.searchResult = document.querySelector(select.search.searchResult);    
+    thisApp.selectContainer = document.querySelector(select.containerOf.selectContainer);
     
-    searchResult.innerHTML = arr.length;    
+    /* create list of categories and create select -> option */
+    let allCategories = [];
+    
+    for(let data of thisApp.data){    
 
-    searchButton.addEventListener('click', function(event){
+      for(let category of data.categories){    
+     
+        if(!allCategories.includes(category)){
+          allCategories.push(category);
+        } else {
+          const idIndex = allCategories.indexOf(category);
+          allCategories.splice(idIndex, 0);
+        }     
+      } 
+    }
+
+    for (let singleCategory of allCategories){
+      thisApp.categoryElement = utils.createDOMOptionFromHTML(`${singleCategory}`);
+      thisApp.selectContainer.appendChild(thisApp.categoryElement);
+    }
+
+    thisApp.categoryOption = document.querySelector(select.search.categoryOption);
+
+
+    /* End of create list of categories... */
+   
+    const arr = Array.from(thisApp.playerWrapper);  
+
+    let result = [];   
+    let optionValue = [];
+    
+    thisApp.selectContainer.addEventListener('click', function(e){
+      e.preventDefault();
+      const clickedElement = e.target.value;
+      optionValue = [];
+      console.log('undef', clickedElement == null);
+      optionValue.push(clickedElement);  
+    });
+    thisApp.searchResult.innerHTML = arr.length;    
+    
+    thisApp.searchButton.addEventListener('click', function(event){
       event.preventDefault();
 
-      const value = searchInput.value.toLowerCase();
-      
-      arr.forEach((domElement) => {            
-        const isVisible = domElement.textContent.toLowerCase().includes(value);
-        console.log('domEle', domElement.querySelector(select.filter.dataCategories));
-        if(isVisible == true){
+      const value = thisApp.searchInput.value.toLowerCase();      
+     
+      arr.forEach((domElement) => {   
+        const domCategories = domElement.querySelector('[data-categories]');
+        let inputFilter = '';
+        if(optionValue[0] == undefined){
+          inputFilter = domElement.textContent.toLowerCase().includes(value);
+        } else {
+          inputFilter = domElement.textContent.toLowerCase().includes(value) && domCategories.textContent.toLowerCase().includes(optionValue[0].toLowerCase());
+        }           
+
+        if(inputFilter == true){
           domElement.classList.remove(classNames.elements.hidden);
           if(!result.includes(domElement)){
             result.push(domElement);
           }
-        } else if(!isVisible){
+        } else if(!inputFilter ){
           domElement.classList.add(classNames.elements.hidden);
           if(result.includes(domElement)){
             const idIndex = result.indexOf(domElement);
             result.splice(idIndex, 1);  
           }        
         }       
-        searchResult.innerHTML = result.length;
+        thisApp.searchResult.innerHTML = result.length;
       });
     });
 
