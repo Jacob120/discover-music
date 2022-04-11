@@ -19,9 +19,10 @@ export const select = {
     searchWrapper: '.players-search-wrapper',
     discoverWrapper: '.players-discover-wrapper',
     author_title: '.song-author-title',
-    gap_plugin: '.player',
+    playerGlobal: '.players-wrapper',
     description: '.player-description',
     audio: 'audio',
+    dataCategories: '[data-categories]',
   },
   search: {
     input: '.search-input',

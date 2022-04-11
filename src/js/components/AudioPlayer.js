@@ -52,7 +52,7 @@ class AudioPlayer { // eslint-disable-line
      </audio>
    </div>
    <div class="row player-description">
-     <h4 class="col-md-6" data-categories="${dataCategory}">Categories: ${categoryList} </h4>
+     <h4 class="col-md-6 categories" data-categories="${dataCategory}">Categories: ${categoryList} </h4>
      <h4 class="col-md-6 ranking"># ${thisAudioPlayer.ranking} in the ranking</h4>
    </div>              
   </div>`

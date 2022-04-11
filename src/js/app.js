@@ -34,15 +34,10 @@ const app = {
         thisApp.activatePage(id);
         
         /* change URL hash */
-        window.location.hash = '#/' + id;
-
-        
+        window.location.hash = '#/' + id;        
       });
     }
-
-    thisApp.initData();
-
-    
+    thisApp.initData();    
   },
 
   activatePage: function(pageId){
@@ -77,6 +72,8 @@ const app = {
         thisApp.initHome();
         thisApp.initSearch();
         thisApp.initDiscover();
+        thisApp.favoriteSongs();      
+
       });    
   },  
 
@@ -186,9 +183,7 @@ const app = {
     for (let singleCategory of allCategories){
       thisApp.categoryElement = utils.createDOMOptionFromHTML(`${singleCategory}`);
       thisApp.selectContainer.appendChild(thisApp.categoryElement);
-    }
-
-    
+    }    
     /* End of create list of categories... */
    
     const arr = Array.from(thisApp.playerWrapper);  
@@ -266,8 +261,41 @@ const app = {
     });
   },
 
+  favoriteSongs: function(){
+    const thisApp = this;
+
+    thisApp.playerGlobal = document.querySelectorAll(select.player.playerGlobal);
+    let favoriteSongs = {};
+
+    for(let player of thisApp.playerGlobal){
+
+      const playerAudio = player.querySelector('audio');
+      const playerCategories = player.querySelector('[data-categories]');
+      const playerCategoriesData = playerCategories.getAttribute('data-categories');
+      const categoriesTagsArray = playerCategoriesData.split(' ');  
+
+      playerAudio.addEventListener('play', function(e){
+        e.preventDefault(); 
+        
+        for (let category of categoriesTagsArray) {
+          // console.log('category', category);
+          if(!favoriteSongs[category]){
+            favoriteSongs[category] = 1;
+          } else {
+            favoriteSongs[category]++;
+          }
+        }
+        const sort = Object.entries(favoriteSongs).sort((a,b) => b[1]-a[1]).map(el=>el[0]);
+        console.log('sort', sort[0]);
+        // return (sort[0]);
+      });      
+    }
+    console.log('fav', favoriteSongs);
+
+  },
+
   generateDOMElement: function(container, data, wrapperClassName, audioPluginClass) {
-    // const thisApp = this;
+
     const elementContainer = document.querySelector(container);
 
     for(const item of data){
@@ -277,7 +305,9 @@ const app = {
 
   init: function () {
     const thisApp = this;
-    thisApp.initPages();      
+    thisApp.initPages();
+    // thisApp.favoriteSongs();
+    // console.log('fav', thisApp.favoriteSongs());
   }
 };
 
