@@ -72,8 +72,6 @@ const app = {
         thisApp.initHome();
         thisApp.initSearch();
         thisApp.initDiscover();
-        thisApp.favoriteSongs();      
-
       });    
   },  
 
@@ -241,31 +239,28 @@ const app = {
 
     thisApp.generateDOMElement(select.containerOf.discoverPage, thisApp.data, classNames.elements.discoverPageSongs, classNames.audioPlayer.discover);
 
+    thisApp.playerGlobal = document.querySelectorAll(select.player.playerGlobal);
     thisApp.playerWrapper = document.querySelectorAll(select.player.discoverWrapper);   
+    thisApp.discoverPageId = document.getElementById('discover-nav-id');
+    thisApp.discoverSubtitle = document.querySelector('.discover-subtitle');
 
     const arr = Array.from(thisApp.playerWrapper);
-
     const randomNumber = Math.floor(Math.random() * arr.length) +1; 
 
-    arr.forEach((domElement) => {
-      domElement.classList.add(classNames.elements.hidden);   
-    
-      if(domElement.id == randomNumber) {
-        domElement.classList.remove(classNames.elements.hidden);
-      }
-    });
+    thisApp.discoverSubtitle.innerHTML = `<h2>You didn&apos;t check any of our songs so we prepared something unpredictable!<br> Give it a try!</h2>`;
 
-    GreenAudioPlayer.init({ // eslint-disable-line no-undef
-      selector: '.player-discoverpage', 
-      stopOthersOnPlay: true
-    });
-  },
+    const noFavoriteCategory = function(){
+      arr.forEach((domElement) => {      
+        domElement.classList.add(classNames.elements.hidden);   
+        
+        if(domElement.id == randomNumber) {
+          domElement.classList.remove(classNames.elements.hidden);
+        }
+      });
+    };
+    noFavoriteCategory();
 
-  favoriteSongs: function(){
-    const thisApp = this;
-
-    thisApp.playerGlobal = document.querySelectorAll(select.player.playerGlobal);
-    let favoriteSongs = {};
+    let favoriteMusicCategories = {};
 
     for(let player of thisApp.playerGlobal){
 
@@ -278,20 +273,40 @@ const app = {
         e.preventDefault(); 
         
         for (let category of categoriesTagsArray) {
-          // console.log('category', category);
-          if(!favoriteSongs[category]){
-            favoriteSongs[category] = 1;
+    
+          if(!favoriteMusicCategories[category]){
+            favoriteMusicCategories[category] = 1;
           } else {
-            favoriteSongs[category]++;
+            favoriteMusicCategories[category]++;
           }
         }
-        const sort = Object.entries(favoriteSongs).sort((a,b) => b[1]-a[1]).map(el=>el[0]);
-        console.log('sort', sort[0]);
-        // return (sort[0]);
-      });      
+        const favoriteCategoriesList = Object.entries(favoriteMusicCategories).sort((a,b) => b[1]-a[1]).map(el=>el[0]); 
+        thisApp.mostPopularCategory = favoriteCategoriesList[0];
+      }); 
     }
-    console.log('fav', favoriteSongs);
 
+    thisApp.discoverPageId.addEventListener('click', function(){
+      arr.forEach((domElement) => {
+          
+        domElement.classList.add(classNames.elements.hidden);   
+        
+        const elementCategorySelector = domElement.querySelector('[data-categories]');
+        const categoryOfElement = elementCategorySelector.getAttribute('data-categories');   
+        if(thisApp.mostPopularCategory == undefined){
+          noFavoriteCategory();
+        }
+        if(categoryOfElement.includes(thisApp.mostPopularCategory)){
+          domElement.classList.remove(classNames.elements.hidden);
+          const favCategory = thisApp.mostPopularCategory.toString();
+          thisApp.discoverSubtitle.innerHTML = `<h2>We&apos;ve seen that you favorite category is "${favCategory}"!<br> We've prepared something special for you!</h2>`;
+        } 
+      });      
+    });
+
+    GreenAudioPlayer.init({ // eslint-disable-line no-undef
+      selector: '.player-discoverpage', 
+      stopOthersOnPlay: true
+    });
   },
 
   generateDOMElement: function(container, data, wrapperClassName, audioPluginClass) {
@@ -306,8 +321,6 @@ const app = {
   init: function () {
     const thisApp = this;
     thisApp.initPages();
-    // thisApp.favoriteSongs();
-    // console.log('fav', thisApp.favoriteSongs());
   }
 };
 

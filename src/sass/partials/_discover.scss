@@ -17,12 +17,14 @@
 }
 
 .discover-subtitle {
-  font-size: 30px;
-  color: $color-white;
-  font-weight: $font-semibold;
-  letter-spacing: 8px;
-  margin: 50px auto;
-  text-align: center;
+  h2{
+    font-size: 30px;
+    color: $color-white;
+    font-weight: $font-semibold;
+    letter-spacing: 2px;
+    margin: 50px auto;
+    text-align: center;
+  }
 }
 
 
